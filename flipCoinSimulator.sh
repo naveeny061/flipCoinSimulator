@@ -13,8 +13,18 @@ else
 ((tails++))
 echo "tails"
 fi
+if [[ $tails -eq $heads ]]
+then
+if [[ $tails -eq $(($heads+2)) ]]
+then
+break
+elif [[ $heads -eq $(($tails+2)) ]]
+then
+break
+fi
+fi
 if [[ $heads -eq 21 || $tails -eq 21 ]]
-then 
+then
 break
 fi
 done
@@ -31,3 +41,5 @@ else
 value=$((tails-heads))
 echo "tails win by "$value
 fi
+
+
